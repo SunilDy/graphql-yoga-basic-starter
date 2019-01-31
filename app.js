@@ -13,10 +13,6 @@ const serverConfig = {
     playground: "/graphql"
 }
 
-// connect(
-//     "yoga", "dbAdmin", "admin", "localhost", 27017
-// );
-
 connect({
     dbName: "yoga",
     user: "dbAdmin",
@@ -30,6 +26,11 @@ const server = new GraphQLServer({
     resolvers,
     context: ({req, res}) => ({req, res, pubsub})
 })
+
+server.get('/', (_, res) => {
+    res.send("Endpoint to serve react!")
+})
+
 server.start(serverConfig, ({port}) => {
     console.log(
         `==>✔✨ Server is running on https://localhost:${port}/graphql...`
