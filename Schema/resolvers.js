@@ -1,4 +1,5 @@
 const { PubSub } = require('graphql-yoga');
+const bcrypt = require('bcryptjs');
 const User = require('../Models/User');
 
 // PUBSUB Consts
@@ -17,10 +18,13 @@ const resolvers = {
     Mutation: {
         createUser: (_, {name, email, password}, {pubsub}) => {
 
+            let salt = bcrypt.genSaltSync(10);
+            let hash = bcrypt.hashSync(password, salt);
+
             let user = new User({
                 name,
                 email,
-                password
+                password: hash
             });
 
             pubsub.publish(NEW_USER, {

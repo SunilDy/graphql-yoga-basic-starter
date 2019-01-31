@@ -1,5 +1,4 @@
-# Graphql-yoga Starter
-with MongoDB
+# Graphql-yoga Starter ### with MongoDB
 
 # Quick start
 ```
