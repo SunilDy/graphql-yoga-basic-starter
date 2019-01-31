@@ -1,0 +1,18 @@
+type Query {
+    findUser(name: String!, password: String!): User!
+    users: [User!]!
+}
+type Mutation {
+    createUser(name: String!,email: String,password: String!): User!
+}
+type Subscription {
+        newUser: User!
+}
+
+# Schema types
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    password: String!
+}

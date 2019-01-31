@@ -1,0 +1,16 @@
+{
+  "name": "apollo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "graphql": "^14.1.1",
+    "graphql-yoga": "^1.17.1",
+    "mongoose": "^5.4.7"
+  },
+  "scripts": {
+    "go": "nodemon app.js"
+  }
+}
