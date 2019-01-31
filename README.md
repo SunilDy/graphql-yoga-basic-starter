@@ -1,9 +1,8 @@
-# apollo-server-express CRUD app skeleton
-## with MongoDB
+# Graphql-yoga Starter
+with MongoDB
 
 # Quick start
 ```
-cd repo_dir
 yarn install
 yarn go
 ```
