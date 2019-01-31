@@ -32,6 +32,15 @@ const resolvers = {
             });
             return user.save();
            
+        },
+        deleteUser: (_, args, { res }) => {
+            return User.findByIdAndDelete({_id: args.id}, {runValidators: true})
+                .then(doc => {
+                    return doc;
+                })
+                .catch(err => {
+                    return res.status(500).send(err);
+                })
         }
     },
     Subscription: {
